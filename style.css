@@ -7,15 +7,24 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+    
+}
+
 body {
     font-family: 'Josefin Sans','Noto Sans JP',sans-serif;
 }
 
 header {
     display: flex;
+    width: 100%;
+    position: fixed;
     justify-content: center;
     align-items: center;
     max-height: 70px;
+    background-color: #fff;
+    z-index: 999;
     color: #333;
     height: 70px;
     box-shadow: 0px 4px 16px rgba(0,0,0,0.11);
@@ -43,7 +52,7 @@ header {
     vertical-align: top;
     display: inline;
     text-decoration: none;
-    padding: 8px 1em;
+    padding: 8px;
     border-radius: 4px;
     transition: .3s;
 }
@@ -65,7 +74,7 @@ main {
     width: 100%;
     align-items: center;
     justify-content: center;
-    height: calc(100vh - 70px);
+    height: 100vh;
 }
 .top>.content {
     width: 100%;
@@ -85,17 +94,22 @@ main {
 .hover-line::after {
     position: absolute;
     width: 0; /* 初期状態では非表示 */
-    bottom: 3px;
+    bottom: 8px;
     left: 0;
-    height: 8px;
+    height: 10px;
     content: '';
+    z-index: -1;
+    border-radius: 100vh;
     background-color: #21b48b;
     animation: expandLine .3s ease-in-out 1s forwards; /* アニメーション設定 */
 }
 
 @keyframes expandLine {
+    from {
+        left: -10px;
+    }
     to {
-        width: 100%; /* 最終的な線の幅 */
+        width: 102%; /* 最終的な線の幅 */
     }
 }
 
@@ -126,4 +140,9 @@ main {
     font-weight: bold;
     color: #21b48b !important;
     border-radius: 8px;
+}
+
+.about {
+    display: flex;
+    height: 100vh;
 }
