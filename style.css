@@ -49,6 +49,9 @@ header {
     align-items: center;
     gap: 6px;
 }
+.hamburger {
+    display: none !important;
+}
 .h-item {
     color: #333;
     vertical-align: top;
@@ -57,9 +60,6 @@ header {
     padding: 8px;
     border-radius: 4px;
     transition: .3s;
-}
-.h-item:hover {
-    background-color: #ddd;
 }
 .h-item>i {
     vertical-align: 1px;
@@ -158,4 +158,91 @@ main {
     max-width: 1200px;
     padding: 0 1em;
     color: #fff;
+}
+
+.cards {
+    display: grid;
+    margin-top: 1em;
+    flex-direction: row;
+    gap: 1.25rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    min-height: 400px;
+}
+
+.card {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0,0,0,.16);
+    color: #333;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.card:hover {
+    box-shadow: 0 0 16px rgba(0,0,0,.26);
+}
+
+.card__header {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card__title {
+    padding: 1rem 1rem 0;
+    font-size: 1.25rem;
+    order: 1;
+}
+
+.card__thumbnail {
+    margin: 0;
+    order: 0;
+}
+
+.card__image {
+    width: 100%;
+}
+
+.card__body {
+    padding: 1rem;
+}
+
+.card__text {
+    font-size: .75rem;
+}
+
+.card__text + .card__text {
+    margin-top: .5rem;
+}
+
+.card__footer {
+    display: inline-flex;
+    width: 100%;
+    align-self: flex-end;
+    padding: 1rem;
+    border-top: 1px solid #ddd;
+}
+
+.btn-compact {
+    display: inline;
+    color: #21b48b;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 480px) {
+    .h-item {
+        display: none;
+    }
+    .hamburger {
+        display: inline !important;
+    }
+    .top>.content>h1 {
+        font-size: 3vh !important;
+    }
+    .hover-line::after {
+        bottom: 2px;
+        height: 4px;
+    }
 }
